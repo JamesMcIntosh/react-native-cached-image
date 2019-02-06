@@ -24,6 +24,11 @@ function ensurePath(path) {
         .then(isDir => {
             if (!isDir) {
                 return fs.mkdir(dirPath)
+                    .catch((err) => {
+                        if (!err.message.includes('already exists')) {
+                            console.error(e);
+                        }
+                    })
                     // check if dir has indeed been created because
                     // there's no exception on incorrect user-defined paths (?)...
                     .then(() => fs.isDir(dirPath))
@@ -35,10 +40,6 @@ function ensurePath(path) {
             }
         })
         .catch(err => {
-            // ignore folder already exists errors
-            if (err.message.includes('folder already exists')) {
-                return;
-            }
             return Promise.reject(err);
         });
 }
