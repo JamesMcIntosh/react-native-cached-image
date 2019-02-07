@@ -51,7 +51,7 @@
     "lodash": "^4.17.10",
     "prop-types": "15.5.10",
     "react-native-clcasher": "1.0.0",
-    "rn-fetch-blob": "^0.10.11",
+    "rn-fetch-blob": "git+https://git@github.com/JamesMcIntosh/rn-fetch-blob.git#691c80c5974f617a0873cd785e96808444971d2a",
     "url-parse": "^1.4.1"
   },
   "devDependencies": {

@@ -26,7 +26,7 @@ function ensurePath(path) {
                 return fs.mkdir(dirPath)
                     .catch((err) => {
                         if (!err.message.includes('already exists')) {
-                            console.error(e);
+                            console.error(err);
                         }
                     })
                     // check if dir has indeed been created because
